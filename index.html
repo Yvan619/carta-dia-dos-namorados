@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Dia dos Namorados ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:'Georgia', serif;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+.instruction{
+    color:white;
+    margin-bottom:20px;
+    font-size:1.2rem;
+    text-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+
+.envelope{
+    position:relative;
+    width:320px;
+    height:220px;
+    margin:auto;
+    cursor:pointer;
+    overflow:visible;
+}
+
+.envelope:hover{
+    transform:scale(1.05);
+}
+
+.base{
+    position:absolute;
+    inset:0;
+    background:#e85d75;
+    border-radius:10px;
+    z-index:1;
+}
+
+.flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:110px;
+
+    background:#d94862;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top center;
+    transition:transform 1s ease;
+
+    z-index:2;
+}
+
+.letter{
+    position:absolute;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%);
+    width:90%;
+    height:180px;
+
+    background:white;
+    border-radius:10px;
+    padding:20px;
+
+    overflow-y:auto;
+    line-height:1.8;
+
+    z-index:0;
+
+    transition:all 1s ease;
+}
+
+.closed .letter{
+    top:60px;
+    height:130px;
+}
+
+.open .flap{
+      transform:rotateX(180deg);
+}
+
+.open .letter{
+    bottom:120px;
+    height:500px;
+    z-index:3;
+}
+
+h1{
+    color:#d94862;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.heart{
+    text-align:center;
+    font-size:2rem;
+    margin-top:20px;
+}
+
+@media(max-width:600px){
+    .envelope{
+        width:280px;
+    }
+
+    .open .letter{
+        top:-420px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="instruction">
+        Clique na carta ❤️
+    </div>
+
+    <div class="envelope closed" id="envelope">
+
+        <div class="letter">
+            <h1>Entre Telas e Distâncias</h1>
+
+            <p>
+            Há dias em que a distância pesa,<br>
+            como se os quilômetros soubessem exatamente onde machucar.<br>
+            Mas então chega uma mensagem sua,<br>
+            e o mundo parece um pouco menor.
+            </p>
+
+            <br>
+
+            <p>
+            Estranho como alguém pode estar tão longe<br>
+            e, ainda assim, ser a pessoa mais presente dos meus dias.<br>
+            Você está nos pensamentos que surgem sem aviso,<br>
+            nas músicas que me fazem sorrir,<br>
+            e nos planos que faço para o futuro.
+            </p>
+
+            <br>
+
+            <p>
+            Não posso segurar sua mão agora,<br>
+            nem te abraçar quando o dia for difícil,<br>
+            mas carrego você comigo<br>
+            em cada sonho, em cada conquista, em cada espera.
+            </p>
+
+            <br>
+
+            <p>
+            E se a saudade às vezes dói,<br>
+            é porque o que sentimos vale a pena.<br>
+            Porque existem pessoas que passam pela nossa vida,<br>
+            e existem pessoas que se tornam lar.
+            </p>
+
+            <br>
+
+            <p>
+            Você é o lugar para onde meus pensamentos voltam,<br>
+            a voz que acalma minhas tempestades,<br>
+            e a certeza de que algumas conexões<br>
+            são maiores do que qualquer distância.
+            </p>
+
+            <br>
+
+            <p>
+            Então, neste Dia dos Namorados,<br>
+            não tenho apenas um "eu te amo" para te dar.<br>
+            Tenho todos os que guardei nos dias de saudade,<br>
+            nos momentos de silêncio,<br>
+            e nas noites em que desejei estar ao seu lado.
+            </p>
+
+            <br>
+
+            <p>
+            E até que o próximo abraço chegue,<br>
+            continuarei te amando daqui,<br>
+            um dia de cada vez,<br>
+            até que a distância seja apenas uma lembrança da nossa história.
+            </p>
+
+            <div class="heart">❤️</div>
+        </div>
+
+        <div class="base"></div>
+        <div class="flap"></div>
+
+    </div>
+
+</div>
+
+<script>
+const envelope = document.getElementById('envelope');
+
+envelope.addEventListener('click', () => {
+    envelope.classList.toggle('open');
+    envelope.classList.toggle('closed');
+});
+</script>
+
+</body>
+</html>
